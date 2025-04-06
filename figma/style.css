@@ -1,0 +1,750 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+/* 头部样式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    height: 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn svg {
+    fill: #666;
+}
+
+.header-left h1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.header-right span {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.header-right span.active-tab {
+    color: #1890ff;
+    border-bottom: 2px solid #1890ff;
+}
+
+/* 工具栏样式 */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.toolbar-left, .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-action {
+    background: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-action.active {
+    color: #1890ff;
+    border-color: #1890ff;
+}
+
+.btn-action svg {
+    fill: #666;
+}
+
+.btn-space {
+    width: 1px;
+    height: 20px;
+    background-color: #e0e0e0;
+    margin: 0 5px;
+}
+
+.filter-select {
+    padding: 5px 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 13px;
+    outline: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+}
+
+.search-bar svg {
+    fill: #999;
+    margin-right: 5px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 13px;
+    width: 200px;
+}
+
+.btn-primary {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+}
+
+.btn-primary svg {
+    fill: white;
+}
+
+.btn-more {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn-more svg {
+    fill: #666;
+}
+
+/* 内容区域样式 */
+.content {
+    flex: 1;
+    padding: 0 20px;
+    overflow-x: auto;
+}
+
+.test-cases-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.test-cases-table th, .test-cases-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.test-cases-table th {
+    background-color: #fafafa;
+    font-weight: 500;
+    color: #666;
+}
+
+.test-cases-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.col-id {
+    width: 120px;
+}
+
+.col-name {
+    width: 200px;
+}
+
+.col-module {
+    width: 150px;
+}
+
+.col-priority, .col-status, .col-result {
+    width: 100px;
+}
+
+.col-executor {
+    width: 120px;
+}
+
+.col-date {
+    width: 150px;
+}
+
+.col-actions {
+    width: 100px;
+}
+
+.select-all {
+    width: 40px;
+}
+
+/* 标签样式 */
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.tag-primary {
+    background-color: #e6f7ff;
+    color: #1890ff;
+    border: 1px solid #91d5ff;
+}
+
+.tag-success {
+    background-color: #f6ffed;
+    color: #52c41a;
+    border: 1px solid #b7eb8f;
+}
+
+.tag-warning {
+    background-color: #fffbe6;
+    color: #faad14;
+    border: 1px solid #ffe58f;
+}
+
+.tag-danger {
+    background-color: #fff1f0;
+    color: #f5222d;
+    border: 1px solid #ffa39e;
+}
+
+.tag-default {
+    background-color: #f5f5f5;
+    color: #666;
+    border: 1px solid #d9d9d9;
+}
+
+/* 分页样式 */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.pagination-info {
+    color: #666;
+    font-size: 13px;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-btn {
+    padding: 5px 10px;
+    border: 1px solid #d9d9d9;
+    background: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.pagination-btn:hover {
+    color: #1890ff;
+    border-color: #1890ff;
+}
+
+.page-number {
+    color: #666;
+    font-size: 13px;
+}
+
+#page-size {
+    padding: 5px 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 13px;
+    outline: none;
+}
+
+/* 按钮样式 */
+.action-btn {
+    color: #1890ff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.action-btn:hover {
+    color: #40a9ff;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: modalFadeIn 0.3s;
+}
+
+/* 大型模态框 */
+.large-modal {
+    max-width: 1200px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.close {
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.close:hover {
+    color: #666;
+}
+
+.modal-body {
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* 分栏布局 */
+.split-layout {
+    display: flex;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 表单面板 */
+.form-panel {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 600px;
+    border-right: 1px solid #f0f0f0;
+}
+
+/* 表单链接样式 */
+.form-link {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.template-link {
+    color: #1890ff;
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+.template-link:hover {
+    text-decoration: underline;
+}
+
+.import-text {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 添加物料链接 */
+.add-material {
+    margin-top: 8px;
+}
+
+.add-material a, .add-step a, .add-relation a, .add-standard a {
+    color: #1890ff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.add-material a:hover, .add-step a:hover, .add-relation a:hover, .add-standard a:hover {
+    text-decoration: underline;
+}
+
+/* 步骤组样式 */
+.steps-group {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.step-header {
+    display: flex;
+    background-color: #fafafa;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.step-header span {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.step-content {
+    display: flex;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.step-editor, .result-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-editor {
+    border-right: 1px solid #f0f0f0;
+}
+
+/* 编辑器工具栏 */
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    margin-right: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.toolbar-btn:hover {
+    background-color: #e6f7ff;
+}
+
+.font-select {
+    padding: 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    margin-right: 4px;
+    font-size: 13px;
+}
+
+/* 编辑器内容区域 */
+.editor-content {
+    padding: 10px;
+    min-height: 100px;
+    color: #999;
+    font-size: 13px;
+}
+
+/* 添加步骤按钮 */
+.add-step {
+    padding: 10px 15px;
+    background-color: #fafafa;
+}
+
+/* 附件按钮 */
+.attachment-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.attachment-btn {
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.attachment-btn:hover {
+    background-color: #e6f7ff;
+    border-color: #1890ff;
+    color: #1890ff;
+}
+
+/* 右侧模板面板 */
+.template-panel {
+    width: 320px;
+    background-color: #fff;
+    border-left: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.template-panel-header {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.template-panel-header h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+.template-panel-body {
+    padding: 15px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* 模板面板表单项 */
+.module-select, .execute-type, .priority-select, .case-type, .tech-type, .standard, .description {
+    margin-bottom: 20px;
+}
+
+.module-select span, .execute-type span, .priority-select span, .case-type span, .tech-type span, .standard span, .description span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.module-select select, .execute-type select, .priority-select select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 14px;
+    outline: none;
+}
+
+/* 用例类型按钮 */
+.case-type-options, .tech-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.case-type-btn, .tech-btn {
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.case-type-btn:hover, .tech-btn:hover, .case-type-btn.active, .tech-btn.active {
+    background-color: #e6f7ff;
+    border-color: #1890ff;
+    color: #1890ff;
+}
+
+.tech-btn.active {
+    background-color: #e6f7ff;
+    border-color: #1890ff;
+    color: #1890ff;
+}
+
+.description textarea {
+    width: 100%;
+    height: 80px;
+    padding: 8px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    font-size: 14px;
+    resize: none;
+}
+
+/* 模板按钮 */
+.template-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 6px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.confirm-btn {
+    background: #1890ff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel-btn:hover {
+    border-color: #40a9ff;
+    color: #40a9ff;
+}
+
+.confirm-btn:hover {
+    background-color: #40a9ff;
+}
+
+/* 表单底部按钮 */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 8px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#cancel-case {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #d9d9d9;
+}
+
+#save-draft {
+    background-color: #fff;
+    color: #1890ff;
+    border: 1px solid #1890ff;
+}
+
+#submit-case {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+}
+
+#close-modal {
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #d9d9d9;
+}
+
+#cancel-case:hover {
+    color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+#save-draft:hover {
+    background-color: #e6f7ff;
+}
+
+#submit-case:hover {
+    background-color: #40a9ff;
+}
+
+#close-modal:hover {
+    color: #666;
+    border-color: #999;
+} 
